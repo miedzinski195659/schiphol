@@ -1,3 +1,5 @@
+import Model.Flight;
+import com.google.gson.Gson;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.ParseException;
@@ -18,10 +20,14 @@ import java.io.IOException;
  * Created by lm on 17.05.2017.
  */
 public class FlightsTests {
-    private static final Logger log = LoggerFactory.getLogger(FlightsTests.class);
+    private Logger logger = LoggerFactory.getLogger(FlightsTests.class);
+
+    public void print(Object o) {
+        logger.info("Got {}", o);
+    }
 
     @Test
-    public void test1(){
+    public void test1() {
         try {
             String APP_ID = "";
             String APP_KEY = "";
@@ -36,6 +42,9 @@ public class FlightsTests {
                 JSONArray flights = (JSONArray) jsonObject.get("flights");
                 System.out.println("found " + flights.size() + " flights");
                 flights.forEach(System.out::println);
+                Gson gson = new Gson();
+                Flight f = gson.fromJson(flights.get(0).toString(), Flight.class);
+                print(f);
             } else {
                 System.out.println(
                         "Oops something went wrong\nHttp response code: " + response.getStatusLine().getStatusCode() + "\nHttp response body: "
