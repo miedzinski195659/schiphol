@@ -147,7 +147,7 @@ public class Flight {
     }
 
     public String getTerminal() {
-        return terminal;
+        return terminal != null ? terminal : "-";
     }
 
     public void setTerminal(String terminal) {
@@ -227,7 +227,7 @@ public class Flight {
     }
 
     public String getGate() {
-        return gate;
+        return gate != null ? gate : "-";
     }
 
     public void setGate(String gate) {

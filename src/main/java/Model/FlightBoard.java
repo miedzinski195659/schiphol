@@ -55,6 +55,8 @@ public class FlightBoard {
             } else {
                 out += "Flight: [" + f.getFlightNumber() + "] " + f.getFlightDirection();
             }
+            out += " Date: " + f.getScheduleDate() + " Time: " + f.getScheduleTime();
+            out += " Terminal: "+f.getTerminal() + " Gate: "+f.getGate();
             out += "\n";
         }
         return out;
