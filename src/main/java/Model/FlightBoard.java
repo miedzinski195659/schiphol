@@ -1,6 +1,9 @@
 package Model;
 
+import org.apache.commons.collections4.CollectionUtils;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,5 +58,20 @@ public class FlightBoard {
             out += "\n";
         }
         return out;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        FlightBoard that = (FlightBoard) o;
+
+        return flights != null ? CollectionUtils.isEqualCollection(this.flights, that.getFlights()) : that.flights == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return flights != null ? flights.hashCode() : 0;
     }
 }

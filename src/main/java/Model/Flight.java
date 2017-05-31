@@ -310,4 +310,96 @@ public class Flight {
     public String toString() {
         return "ClassPojo [prefixICAO = " + prefixICAO + ", publicEstimatedOffBlockTime = " + publicEstimatedOffBlockTime + ", aircraftRegistration = " + aircraftRegistration + ", flightDirection = " + flightDirection + ", expectedTimeBoarding = " + expectedTimeBoarding + ", flightNumber = " + flightNumber + ", id = " + id + ", expectedTimeGateClosing = " + expectedTimeGateClosing + ", checkinAllocations = " + checkinAllocations + ", airlineCode = " + airlineCode + ", terminal = " + terminal + ", transferPositions = " + transferPositions + ", codeshares = " + codeshares + ", expectedTimeOnBelt = " + expectedTimeOnBelt + ", baggageClaim = " + baggageClaim + ", estimatedLandingTime = " + estimatedLandingTime + ", aircraftType = " + aircraftType + ", serviceType = " + serviceType + ", prefixIATA = " + prefixIATA + ", scheduleTime = " + scheduleTime + ", gate = " + gate + ", actualOffBlockTime = " + actualOffBlockTime + ", mainFlight = " + mainFlight + ", publicFlightState = " + publicFlightState + ", expectedTimeGateOpen = " + expectedTimeGateOpen + ", route = " + route + ", scheduleDate = " + scheduleDate + ", flightName = " + flightName + ", actualLandingTime = " + actualLandingTime + ", schemaVersion = " + schemaVersion + "]";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Flight flight = (Flight) o;
+
+        if (prefixICAO != null ? !prefixICAO.equals(flight.prefixICAO) : flight.prefixICAO != null) return false;
+        if (publicEstimatedOffBlockTime != null ? !publicEstimatedOffBlockTime.equals(flight.publicEstimatedOffBlockTime) : flight.publicEstimatedOffBlockTime != null)
+            return false;
+        if (aircraftRegistration != null ? !aircraftRegistration.equals(flight.aircraftRegistration) : flight.aircraftRegistration != null)
+            return false;
+        if (flightDirection != null ? !flightDirection.equals(flight.flightDirection) : flight.flightDirection != null)
+            return false;
+        if (expectedTimeBoarding != null ? !expectedTimeBoarding.equals(flight.expectedTimeBoarding) : flight.expectedTimeBoarding != null)
+            return false;
+        if (flightNumber != null ? !flightNumber.equals(flight.flightNumber) : flight.flightNumber != null)
+            return false;
+        if (id != null ? !id.equals(flight.id) : flight.id != null) return false;
+        if (expectedTimeGateClosing != null ? !expectedTimeGateClosing.equals(flight.expectedTimeGateClosing) : flight.expectedTimeGateClosing != null)
+            return false;
+        if (checkinAllocations != null ? !checkinAllocations.equals(flight.checkinAllocations) : flight.checkinAllocations != null)
+            return false;
+        if (airlineCode != null ? !airlineCode.equals(flight.airlineCode) : flight.airlineCode != null) return false;
+        if (terminal != null ? !terminal.equals(flight.terminal) : flight.terminal != null) return false;
+        if (transferPositions != null ? !transferPositions.equals(flight.transferPositions) : flight.transferPositions != null)
+            return false;
+        if (codeshares != null ? !codeshares.equals(flight.codeshares) : flight.codeshares != null) return false;
+        if (expectedTimeOnBelt != null ? !expectedTimeOnBelt.equals(flight.expectedTimeOnBelt) : flight.expectedTimeOnBelt != null)
+            return false;
+        if (baggageClaim != null ? !baggageClaim.equals(flight.baggageClaim) : flight.baggageClaim != null)
+            return false;
+        if (estimatedLandingTime != null ? !estimatedLandingTime.equals(flight.estimatedLandingTime) : flight.estimatedLandingTime != null)
+            return false;
+        if (aircraftType != null ? !aircraftType.equals(flight.aircraftType) : flight.aircraftType != null)
+            return false;
+        if (serviceType != null ? !serviceType.equals(flight.serviceType) : flight.serviceType != null) return false;
+        if (prefixIATA != null ? !prefixIATA.equals(flight.prefixIATA) : flight.prefixIATA != null) return false;
+        if (scheduleTime != null ? !scheduleTime.equals(flight.scheduleTime) : flight.scheduleTime != null)
+            return false;
+        if (gate != null ? !gate.equals(flight.gate) : flight.gate != null) return false;
+        if (actualOffBlockTime != null ? !actualOffBlockTime.equals(flight.actualOffBlockTime) : flight.actualOffBlockTime != null)
+            return false;
+        if (mainFlight != null ? !mainFlight.equals(flight.mainFlight) : flight.mainFlight != null) return false;
+        if (publicFlightState != null ? !publicFlightState.equals(flight.publicFlightState) : flight.publicFlightState != null)
+            return false;
+        if (expectedTimeGateOpen != null ? !expectedTimeGateOpen.equals(flight.expectedTimeGateOpen) : flight.expectedTimeGateOpen != null)
+            return false;
+        if (route != null ? !route.equals(flight.route) : flight.route != null) return false;
+        if (scheduleDate != null ? !scheduleDate.equals(flight.scheduleDate) : flight.scheduleDate != null)
+            return false;
+        if (flightName != null ? !flightName.equals(flight.flightName) : flight.flightName != null) return false;
+        if (actualLandingTime != null ? !actualLandingTime.equals(flight.actualLandingTime) : flight.actualLandingTime != null)
+            return false;
+        return schemaVersion != null ? schemaVersion.equals(flight.schemaVersion) : flight.schemaVersion == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = prefixICAO != null ? prefixICAO.hashCode() : 0;
+        result = 31 * result + (publicEstimatedOffBlockTime != null ? publicEstimatedOffBlockTime.hashCode() : 0);
+        result = 31 * result + (aircraftRegistration != null ? aircraftRegistration.hashCode() : 0);
+        result = 31 * result + (flightDirection != null ? flightDirection.hashCode() : 0);
+        result = 31 * result + (expectedTimeBoarding != null ? expectedTimeBoarding.hashCode() : 0);
+        result = 31 * result + (flightNumber != null ? flightNumber.hashCode() : 0);
+        result = 31 * result + (id != null ? id.hashCode() : 0);
+        result = 31 * result + (expectedTimeGateClosing != null ? expectedTimeGateClosing.hashCode() : 0);
+        result = 31 * result + (checkinAllocations != null ? checkinAllocations.hashCode() : 0);
+        result = 31 * result + (airlineCode != null ? airlineCode.hashCode() : 0);
+        result = 31 * result + (terminal != null ? terminal.hashCode() : 0);
+        result = 31 * result + (transferPositions != null ? transferPositions.hashCode() : 0);
+        result = 31 * result + (codeshares != null ? codeshares.hashCode() : 0);
+        result = 31 * result + (expectedTimeOnBelt != null ? expectedTimeOnBelt.hashCode() : 0);
+        result = 31 * result + (baggageClaim != null ? baggageClaim.hashCode() : 0);
+        result = 31 * result + (estimatedLandingTime != null ? estimatedLandingTime.hashCode() : 0);
+        result = 31 * result + (aircraftType != null ? aircraftType.hashCode() : 0);
+        result = 31 * result + (serviceType != null ? serviceType.hashCode() : 0);
+        result = 31 * result + (prefixIATA != null ? prefixIATA.hashCode() : 0);
+        result = 31 * result + (scheduleTime != null ? scheduleTime.hashCode() : 0);
+        result = 31 * result + (gate != null ? gate.hashCode() : 0);
+        result = 31 * result + (actualOffBlockTime != null ? actualOffBlockTime.hashCode() : 0);
+        result = 31 * result + (mainFlight != null ? mainFlight.hashCode() : 0);
+        result = 31 * result + (publicFlightState != null ? publicFlightState.hashCode() : 0);
+        result = 31 * result + (expectedTimeGateOpen != null ? expectedTimeGateOpen.hashCode() : 0);
+        result = 31 * result + (route != null ? route.hashCode() : 0);
+        result = 31 * result + (scheduleDate != null ? scheduleDate.hashCode() : 0);
+        result = 31 * result + (flightName != null ? flightName.hashCode() : 0);
+        result = 31 * result + (actualLandingTime != null ? actualLandingTime.hashCode() : 0);
+        result = 31 * result + (schemaVersion != null ? schemaVersion.hashCode() : 0);
+        return result;
+    }
 }

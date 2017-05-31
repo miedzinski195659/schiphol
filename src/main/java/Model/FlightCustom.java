@@ -186,4 +186,51 @@ public class FlightCustom {
     public void setAircraftRegistration(String aircraftRegistration) {
         this.aircraftRegistration = aircraftRegistration;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        FlightCustom that = (FlightCustom) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (flightName != null ? !flightName.equals(that.flightName) : that.flightName != null) return false;
+        if (scheduleDate != null ? !scheduleDate.equals(that.scheduleDate) : that.scheduleDate != null) return false;
+        if (flightDirection != null ? !flightDirection.equals(that.flightDirection) : that.flightDirection != null)
+            return false;
+        if (flightNumber != null ? !flightNumber.equals(that.flightNumber) : that.flightNumber != null) return false;
+        if (prefixIATA != null ? !prefixIATA.equals(that.prefixIATA) : that.prefixIATA != null) return false;
+        if (prefixICAO != null ? !prefixICAO.equals(that.prefixICAO) : that.prefixICAO != null) return false;
+        if (scheduleTime != null ? !scheduleTime.equals(that.scheduleTime) : that.scheduleTime != null) return false;
+        if (serviceType != null ? !serviceType.equals(that.serviceType) : that.serviceType != null) return false;
+        if (mainFlight != null ? !mainFlight.equals(that.mainFlight) : that.mainFlight != null) return false;
+        if (estimatedLandingTime != null ? !estimatedLandingTime.equals(that.estimatedLandingTime) : that.estimatedLandingTime != null)
+            return false;
+        if (actualLandingTime != null ? !actualLandingTime.equals(that.actualLandingTime) : that.actualLandingTime != null)
+            return false;
+        if (terminal != null ? !terminal.equals(that.terminal) : that.terminal != null) return false;
+        if (gate != null ? !gate.equals(that.gate) : that.gate != null) return false;
+        return aircraftRegistration != null ? aircraftRegistration.equals(that.aircraftRegistration) : that.aircraftRegistration == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (flightName != null ? flightName.hashCode() : 0);
+        result = 31 * result + (scheduleDate != null ? scheduleDate.hashCode() : 0);
+        result = 31 * result + (flightDirection != null ? flightDirection.hashCode() : 0);
+        result = 31 * result + (flightNumber != null ? flightNumber.hashCode() : 0);
+        result = 31 * result + (prefixIATA != null ? prefixIATA.hashCode() : 0);
+        result = 31 * result + (prefixICAO != null ? prefixICAO.hashCode() : 0);
+        result = 31 * result + (scheduleTime != null ? scheduleTime.hashCode() : 0);
+        result = 31 * result + (serviceType != null ? serviceType.hashCode() : 0);
+        result = 31 * result + (mainFlight != null ? mainFlight.hashCode() : 0);
+        result = 31 * result + (estimatedLandingTime != null ? estimatedLandingTime.hashCode() : 0);
+        result = 31 * result + (actualLandingTime != null ? actualLandingTime.hashCode() : 0);
+        result = 31 * result + (terminal != null ? terminal.hashCode() : 0);
+        result = 31 * result + (gate != null ? gate.hashCode() : 0);
+        result = 31 * result + (aircraftRegistration != null ? aircraftRegistration.hashCode() : 0);
+        return result;
+    }
 }
