@@ -3,7 +3,6 @@ package Model;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,7 +55,7 @@ public class FlightBoard {
                 out += "Flight: [" + f.getFlightNumber() + "] " + f.getFlightDirection();
             }
             out += " Date: " + f.getScheduleDate() + " Time: " + f.getScheduleTime();
-            out += " Terminal: "+f.getTerminal() + " Gate: "+f.getGate();
+            out += " Terminal: " + f.getTerminal() + " Gate: " + f.getGate();
             out += "\n";
         }
         return out;

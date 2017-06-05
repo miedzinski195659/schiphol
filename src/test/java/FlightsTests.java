@@ -19,6 +19,6 @@ public class FlightsTests {
     @Test
     public void test1() {
         BlockingObservable<FlightBoard> flightBoard = flightsDAO.rxGetCurrentFlightBoard().distinct().toBlocking();
-        flightBoard.subscribe((x)->print(x));
+        flightBoard.subscribe((x) -> print(x));
     }
 }

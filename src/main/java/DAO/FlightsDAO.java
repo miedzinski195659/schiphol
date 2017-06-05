@@ -12,16 +12,14 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Observable;
-import rx.exceptions.OnErrorNotImplementedException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -45,14 +43,12 @@ public class FlightsDAO {
                 JSONObject jsonObject = (JSONObject) parser.parse(responseBody);
                 JSONArray flights = (JSONArray) jsonObject.get("flights");
                 Gson gson = new Gson();
-//                currentFlights.add(gson.fromJson(flights.get(4).toString(), Flight.class));
                 flights.stream().forEach(o -> {
                     try {
                         flightBoard.addFlight(gson.fromJson(o.toString(), Flight.class));
                     } catch (Exception e) {
-//                        log.info("Invalid object to parse");
+                        //Do nothing, just pass through
                     }
-
                 });
             } else {
                 System.out.println(
@@ -68,6 +64,8 @@ public class FlightsDAO {
         } catch (org.json.simple.parser.ParseException e) {
             e.printStackTrace();
         }
+        String timeStamp = new SimpleDateFormat().format( new Date() );
+        log.info("["+timeStamp+"] New data fetch!");
         return flightBoard;
     }
 
